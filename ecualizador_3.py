@@ -121,12 +121,19 @@ def FILTRO():
     global b1, b2, m1, m2, a1, a2, sf, Fs, vol
     #filtros
     bajo1 = float(Bajo1.get())
+    print('Bajo1', bajo1)
     bajo2 = float(Bajo2.get())
+    print('Bajo2', bajo2)
     medio1 = float(Medio1.get())
+    print('Medio1', medio1)
     medio2 = float(Medio2.get())
+    print('Medio2', medio2)
     alto1 = float(Alto1.get())
+    print('Alto1', alto1)
     alto2 = float(Alto2.get())
+    print('Alto2', alto2)
     vol = float(Volumen.get())
+    print('Volumen', vol)
     #abrir archivo
     Fs, y = wavfile.read("primer.wav")
     N = len(y)
@@ -140,7 +147,7 @@ def FILTRO():
     
     #primer filtro bajo1
     cutoff = 125
-    print('Frecuencia de corte', cutoff)
+    #print('Frecuencia de corte', cutoff)
     
     stopfreq = float(cutoff)
     cornerfreq = 0.4 * stopfreq
@@ -328,7 +335,7 @@ ventana = Tk()
 #tamaño
 ventana.geometry("700x300+100+200")
 #fondo
-imagen = PhotoImage(file = "fondo.gif")
+imagen = PhotoImage(file = "fondo.png")
 fondo = Label(ventana, image = imagen).place(x = 0, y = 0)
 #titulo
 ventana.title("Ecualizador")
